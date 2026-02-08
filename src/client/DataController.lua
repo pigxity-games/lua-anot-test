@@ -1,7 +1,7 @@
 local PlayerScripts = script:FindFirstAncestorOfClass("PlayerScripts")
 local T = require(PlayerScripts.generated.Types)
 
---@controller, depends=[server:DataService]
+--@service, depends=[server:DataService]
 local controller = {}
 
 function controller:_init(deps: T.DataControllerDeps)
