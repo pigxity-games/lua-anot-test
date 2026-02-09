@@ -2,6 +2,7 @@ local PlayerScripts = script:FindFirstAncestorOfClass("PlayerScripts")
 local T = require(PlayerScripts.generated.Types)
 
 --@service, depends=[server:DataService]
+--@exportType
 local controller = {}
 
 function controller:_init(deps: T.DataControllerDeps)

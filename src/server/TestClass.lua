@@ -1,6 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local class = require(ReplicatedStorage.generated.Index).Class
+local class = require(ReplicatedStorage.Generated.Index).Class
 
+--@indexed
 local TestClass = {}
 
 function TestClass:_init(str: any)
@@ -11,4 +12,5 @@ function TestClass:getString(): any
     return self.value
 end
 
-return class(TestClass)
+TestClass = class(TestClass)
+return TestClass
