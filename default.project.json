@@ -6,9 +6,9 @@
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
             "$path": "src/shared",
-            "Packages": {
+            "DefaultExt": {
                 "$className": "Folder",
-                "$path": "include"
+                "$path": "default-extension/shared"
             }
         },
 
