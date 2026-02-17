@@ -11,7 +11,7 @@
         {
             "py_entry": ["path", "default-extension/build/main.py"],
             "lua_entry": {
-                "shared": "require(:DefaultExt):"
+                "shared": ["path", ["default-extension/shared", ":DefaultExt"]]
             }
         }
     ]
