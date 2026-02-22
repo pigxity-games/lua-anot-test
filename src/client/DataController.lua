@@ -1,23 +1,21 @@
-local PlayerScripts = script:FindFirstAncestorOfClass("PlayerScripts")
-local T = require(PlayerScripts.generated.Types)
-
 --@service, depends=[server:DataService]
 local controller = {}
 
-function controller:_init(deps: T.DataControllerDeps)
-    self.DataService = deps.server. DataService
-end
+function controller:_init(deps)
+    self.DataService = deps.server.DataService
 
-function controller:_start()
-    self.data = self.DataService:get()
+    task.spawn(function()
+        self.data = self.DataService.get()
+        print(self.data)
+    end)
 end
 
 --@remote, event
-function controller:updateData(data: T.PlayerDataPatch)
+function controller.updateData(data)
     for key, value in pairs(data) do
-        self.data[key] = value
+        controller.data[key] = value
     end
-    print(self.data)
+    print(controller.data)
 end
 
 return controller

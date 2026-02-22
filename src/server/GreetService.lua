@@ -1,22 +1,20 @@
 local Players = game:GetService("Players")
-local ServerScriptService = game:GetService("ServerScriptService")
-local T = require(ServerScriptService.generated.Types)
 
 --@service, depends=[client:MessageController, DataService]
 local module = {}
 
-function module:_init(deps: T.GreetServiceDeps)
-	self.MessageController = deps.MessageController
-	self.DataService= deps.DataService
+function module:_init(deps)
+	self.MessageController = deps.client.MessageController
+	self.DataService = deps.DataService
+
+	task.spawn(start)
 end
 
-function module:_start()
-	local startTick = tick()
-
+function start()
 	while task.wait(1) do
-		for player in Players:GetPlayers() do
-			self.MessageController:printMessage('Hello, ' .. player.Name)
-			self.DataService:update(player, {money = tick() - startTick})
+		for _, player in ipairs(Players:GetPlayers()) do
+			module.MessageController.printMessage(player, 'Hello, ' .. player.Name)
+			module.DataService:update(player, {money = math.floor(time())})
 		end
 	end
 end

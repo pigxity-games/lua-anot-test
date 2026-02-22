@@ -1,9 +1,9 @@
 --@service
-local module = {}
+local controller = {}
 
 --@remote, event
-function module.printMessage(message: string)
+function controller.printMessage(message: string)
 	print("Recieved message " .. message)
 end
 
-return module
+return controller
