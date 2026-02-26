@@ -6,9 +6,9 @@
         "ReplicatedStorage": {
             "$className": "ReplicatedStorage",
             "$path": "src/shared",
-            "DefaultExt": {
+            "GameFramework": {
                 "$className": "Folder",
-                "$path": "default-extension/shared"
+                "$path": "framework-shared"
             }
         },
 

@@ -1,3 +1,0 @@
-[submodule "default-extension"]
-  path = default-extension
-  url = git@github.com:pigxity-games/lua-anot-default-extension.git
